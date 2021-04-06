@@ -31,7 +31,7 @@ input,button,textarea,select,input:focus,textarea:focus{ background:none; outlin
 textarea{ resize: none; overflow: auto;}
 select{ border: none; }
 a,button{ cursor: pointer; }
-a{ text-decorattion: none; blr:expression(this.onFocus=this.blur());}
+/* a{ text-decorattion: none; blr:expression(this.onFocus=this.blur());} */
 blockquote, q { quotes: none; }
 blockquote:before, blockquote:after, q:before, q:after { content: none; }
 /* 合并表格线 && 去掉间隙 */
