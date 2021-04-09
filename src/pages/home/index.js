@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './home.scss';
-import Header from '../../components/header';
+import './Home.scss';
+import {Header} from '../../components';
 
 class Home extends Component {
     render() {
@@ -9,7 +9,7 @@ class Home extends Component {
                 <Header
                   name="洛阳白牡丹"
                   func={()=>{console.log('func')}}/>
-                <h1>Home page</h1>
+                <h1>首页</h1>
             </div>
         )
     }

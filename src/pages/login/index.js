@@ -30,7 +30,8 @@ class Login extends Component {
     }
 
     gotoHome() {
-        this.props.history.push('/home')
+        console.log(11,this.props.location.state)
+        this.props.history.push({from: {pathname: '/'}})
     }
 
     // getData() {

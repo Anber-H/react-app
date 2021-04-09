@@ -1,3 +1,3 @@
-const ZONE = 'components/header/'
+const ZONE = 'components/Header/';
 
-export const SET_DATA = ZONE + 'SET_DATA'
+export const SET_DATA = ZONE + 'SET_DATA';

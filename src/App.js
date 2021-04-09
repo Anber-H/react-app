@@ -4,24 +4,38 @@
   component表示绑定的组件。
   path表示路径，这个很好理解。
 */
-import React, { Fragment } from 'react';
-import Login from './pages/login';
-import Home from './pages/home';
-import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
+import React, { Component } from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
+// import routes from './router/router.js';
+// import Login from './pages/Login/index';
+import Index from './pages/Index/index';
+import PrivateRoute from './components/PrivateRoute';
 
-function App() {
-  return (
-    <Fragment>
-      <HashRouter>
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
         <Switch>
-          <Route path="/login" component={Login} />
-          <Route path="/home" component={Home} />
-          <Route exact path="/" component={Login} />
-          <Redirect to={"/login"} />
+          <Route path='/' component={Index}/>
+          <PrivateRoute path='/' component={Index}/>
         </Switch>
-      </HashRouter>
-    </Fragment>
-  )
+          {/* <Switch>
+            {
+              routes.map(route => {
+                return (
+                  <Route
+                    key={route.path}
+                    path={route.path}
+                    component={route.component}/>
+                )
+              })
+            }
+            <Redirect exact from="/" to={routes[0].path} />
+            <Redirect to="/404"/>
+          </Switch> */}
+      </div>
+    );
+  }
 }
 
-export default App
+export default App;

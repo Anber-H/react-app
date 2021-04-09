@@ -5,13 +5,15 @@ import {Provider} from 'react-redux';
 import store from './store';
 import './mock';
 import './common/style/frame.scss';
-
-const Apps = (
-  <Provider store={store}>
-    <App/>
-  </Provider>
-)
+import * as serviceWorker from './serviceWorker';
+import {BrowserRouter as Router,Route} from 'react-router-dom';
 ReactDOM.render(
-  Apps,
-  document.getElementById('root')
-);
+  <Router>
+    <Route>
+      <Provider store={store}>
+        <App/>
+      </Provider>
+    </Route>
+  </Router>
+,document.getElementById('root'));
+serviceWorker.unregister();
