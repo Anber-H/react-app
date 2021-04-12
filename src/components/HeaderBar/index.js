@@ -8,10 +8,10 @@ class HeaderBar extends Component {
     return (
       <Header className="header">
         <div className="logo" />
-        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['1']}>
-          <Menu.Item key="1">nav 1</Menu.Item>
-          <Menu.Item key="2">nav 2</Menu.Item>
-          <Menu.Item key="3">nav 3</Menu.Item>
+        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['system']}>
+          <Menu.Item key="system">系统管理</Menu.Item>
+          <Menu.Item key="article">文章管理</Menu.Item>
+          <Menu.Item key="user">用户管理</Menu.Item>
         </Menu>
       </Header>
     )

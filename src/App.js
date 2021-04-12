@@ -14,7 +14,7 @@ import PrivateRoute from './components/PrivateRoute';
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="App" style={{height:'100%'}}>
         <Switch>
           <Route path='/' component={Index}/>
           <PrivateRoute path='/' component={Index}/>
