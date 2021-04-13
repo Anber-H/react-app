@@ -5,34 +5,19 @@
   path表示路径，这个很好理解。
 */
 import React, { Component } from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
-// import routes from './router/router.js';
-// import Login from './pages/Login/index';
+import { Route, Switch } from 'react-router-dom';
+import Login from './pages/Login/index';
 import Index from './pages/Index/index';
 import PrivateRoute from './components/PrivateRoute';
 
 class App extends Component {
-  render() {
+  render () {
     return (
-      <div className="App" style={{height:'100%'}}>
+      <div className="App" style={{height: '100%'}}>
         <Switch>
-          <Route path='/' component={Index}/>
+          <Route path='/login' component={Login}/>
           <PrivateRoute path='/' component={Index}/>
         </Switch>
-          {/* <Switch>
-            {
-              routes.map(route => {
-                return (
-                  <Route
-                    key={route.path}
-                    path={route.path}
-                    component={route.component}/>
-                )
-              })
-            }
-            <Redirect exact from="/" to={routes[0].path} />
-            <Redirect to="/404"/>
-          </Switch> */}
       </div>
     );
   }

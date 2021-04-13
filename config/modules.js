@@ -11,7 +11,7 @@ const resolve = require('resolve');
  *
  * @param {Object} options
  */
-function getAdditionalModulePaths(options = {}) {
+function getAdditionalModulePaths (options = {}) {
   const baseUrl = options.baseUrl;
 
   if (!baseUrl) {
@@ -54,7 +54,7 @@ function getAdditionalModulePaths(options = {}) {
  *
  * @param {*} options
  */
-function getWebpackAliases(options = {}) {
+function getWebpackAliases (options = {}) {
   const baseUrl = options.baseUrl;
 
   if (!baseUrl) {
@@ -75,7 +75,7 @@ function getWebpackAliases(options = {}) {
  *
  * @param {*} options
  */
-function getJestAliases(options = {}) {
+function getJestAliases (options = {}) {
   const baseUrl = options.baseUrl;
 
   if (!baseUrl) {
@@ -91,7 +91,7 @@ function getJestAliases(options = {}) {
   }
 }
 
-function getModules() {
+function getModules () {
   // Check if TypeScript is setup
   const hasTsConfig = fs.existsSync(paths.appTsConfig);
   const hasJsConfig = fs.existsSync(paths.appJsConfig);

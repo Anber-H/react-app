@@ -102,7 +102,7 @@ module.exports = function (proxy, allowedHost) {
     public: allowedHost,
     // `proxy` is run between `before` and `after` `webpack-dev-server` hooks
     proxy,
-    before(app, server) {
+    before (app, server) {
       // Keep `evalSourceMapMiddleware` and `errorOverlayMiddleware`
       // middlewares before `redirectServedPath` otherwise will not have any effect
       // This lets us fetch source contents from webpack for the error overlay
@@ -115,7 +115,7 @@ module.exports = function (proxy, allowedHost) {
         require(paths.proxySetup)(app);
       }
     },
-    after(app) {
+    after (app) {
       // Redirect to `PUBLIC_URL` or `homepage` from `package.json` if url not match
       app.use(redirectServedPath(paths.publicUrlOrPath));
 
@@ -128,3 +128,4 @@ module.exports = function (proxy, allowedHost) {
     },
   };
 };
+''()()()()()()

@@ -13,7 +13,6 @@
     "@typescript-eslint/parser": "^4.5.0",
     "antd": "^4.15.0",
     "axios": "^0.21.1",
-    "babel-eslint": "^10.1.0",
     "babel-jest": "^26.6.0",
     "babel-loader": "8.1.0",
     "babel-plugin-named-asset-import": "^0.3.7",
@@ -24,13 +23,10 @@
     "css-loader": "4.3.0",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
-    "eslint": "^7.11.0",
     "eslint-config-react-app": "^6.0.0",
     "eslint-plugin-flowtype": "^5.2.0",
-    "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-jest": "^24.1.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-testing-library": "^3.9.2",
     "eslint-webpack-plugin": "^2.5.2",
@@ -85,7 +81,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "lint": "eslint --ext .js --ext .jsx src"
   },
   "eslintConfig": {
     "extends": [
@@ -176,7 +173,11 @@
     ]
   },
   "devDependencies": {
+    "babel-eslint": "^10.1.0",
     "babel-plugin-import": "^1.13.3",
+    "eslint": "^7.24.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-react": "^7.23.2",
     "less": "^4.1.1",
     "less-loader": "^5.0.0",
     "node-sass": "^5.0.0"

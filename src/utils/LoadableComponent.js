@@ -4,11 +4,11 @@ import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
 class LoadingPage extends React.Component {
-  //类似github页面加载的那个加载条
-  componentWillMount(){
+  // 类似github页面加载的那个加载条
+  componentWillMount () {
     NProgress.start()
   }
-  componentWillUnmount(){
+  componentWillUnmount () {
     NProgress.done()
   }
   render () {
@@ -18,11 +18,10 @@ class LoadingPage extends React.Component {
   }
 }
 
-const LoadableComponent = (component) => {
-  return Loadable({
-    loader: component,
-    loading: ()=><LoadingPage/>
-  })
-}
+const LoadableComponent = (component) => Loadable({
+  loader: component,
+  // eslint-disable-next-line react/display-name
+  loading: () => <LoadingPage/>
+})
 
 export default LoadableComponent

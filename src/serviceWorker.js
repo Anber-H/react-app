@@ -9,8 +9,6 @@
 // This link also includes instructions on opting out of this behavior.
 
 // 主要是用于在生产环境中为用户在本地创建一个service worker 来缓存资源到本地，提升应用的访问速度
-// service worker是在后台运行的一个线程，可以用来处理离线缓存、消息推送、后台自动更新等任务。registerServiceWorker就是为react项目注册了一个service worker，用来做资源的缓存，这样你下次访问时，就可以更快的获取资源。而且因为资源被缓存，所以即使在离线的情况下也可以访问应用（此时使用的资源是之前缓存的资源）。注意，registerServiceWorker注册的service worker 只在生产环境中生效（process.env.NODE_ENV === 'production'）
-
 const isLocalhost = Boolean(
   window.location.hostname === 'localhost' ||
     // [::1] is the IPv6 localhost address.
@@ -21,7 +19,7 @@ const isLocalhost = Boolean(
     )
 );
 
-export default function register() {
+export default function register () {
   if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
     const publicUrl = new URL(process.env.PUBLIC_URL, window.location);
@@ -55,10 +53,10 @@ export default function register() {
   }
 }
 
-function registerValidSW(swUrl) {
+function registerValidSW (swUrl) {
   navigator.serviceWorker
     .register(swUrl)
-    .then(registration => {
+    .then((registration) => {
       registration.onupdatefound = () => {
         const installingWorker = registration.installing;
         installingWorker.onstatechange = () => {
@@ -79,22 +77,22 @@ function registerValidSW(swUrl) {
         };
       };
     })
-    .catch(error => {
+    .catch((error) => {
       console.error('Error during service worker registration:', error);
     });
 }
 
-function checkValidServiceWorker(swUrl) {
+function checkValidServiceWorker (swUrl) {
   // Check if the service worker can be found. If it can't reload the page.
   fetch(swUrl)
-    .then(response => {
+    .then((response) => {
       // Ensure service worker exists, and that we really are getting a JS file.
       if (
         response.status === 404 ||
         response.headers.get('content-type').indexOf('javascript') === -1
       ) {
         // No service worker found. Probably a different app. Reload the page.
-        navigator.serviceWorker.ready.then(registration => {
+        navigator.serviceWorker.ready.then((registration) => {
           registration.unregister().then(() => {
             window.location.reload();
           });
@@ -111,9 +109,9 @@ function checkValidServiceWorker(swUrl) {
     });
 }
 
-export function unregister() {
+export function unregister () {
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.ready.then(registration => {
+    navigator.serviceWorker.ready.then((registration) => {
       registration.unregister();
     });
   }
