@@ -1,17 +1,17 @@
 
 const detail = {
-  path: '/general/Detail',
+  path: '/detail',
   meta: {
     title: '详情',
   },
   icon: 'login',
   children: [
     {
-      path: 'login',
+      path: 'management',
       meta: {
         title: '详情管理',
       },
-      component: (resolve) => require(['@/pages/Detail/index'], resolve)
+      // component: (resolve) => require(['@/pages/Detail/index'], resolve)
     }
   ]
 }

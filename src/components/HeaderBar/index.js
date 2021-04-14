@@ -1,23 +1,22 @@
-import React,{Component} from 'react';
+import React, {Component} from 'react';
 import { Layout, Menu } from 'antd';
 import './HeaderBar.scss';
 import routes from '../../router/router.js';
 const { Header } = Layout;
+import nav from '@/config/pages/menu';
 class HeaderBar extends Component {
-  render() {
+  render () {
     return (
       <Header className="header">
         <div className="logo" />
-        <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['article']}>
-          {routes.map((item,index)=>{
-            return (
-              <Menu.Item key={item.key}>
-                <a href={window.location.origin+'/general/'+item.key}>
-                  {item.name}
-                </a>
-              </Menu.Item>
-            )
-          })}
+        <Menu theme="dark" mode="horizontal">
+          {nav.map((item, index) => (
+            <Menu.Item key={item.key}>
+              <a href={window.location.origin + '/' + item.key + '/management'}>
+                {item.name}
+              </a>
+            </Menu.Item>
+          ))}
         </Menu>
       </Header>
     )

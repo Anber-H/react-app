@@ -6,7 +6,7 @@
 */
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Login from './pages/Login/index';
+// import Login from './pages/Login/index';
 import Index from './pages/Index/index';
 import PrivateRoute from './components/PrivateRoute';
 
@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <div className="App" style={{height: '100%'}}>
         <Switch>
-          <Route path='/login' component={Login}/>
+          <Route path='/collecte/management' component={Index}/>
           <PrivateRoute path='/' component={Index}/>
         </Switch>
       </div>

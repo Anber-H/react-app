@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-// import { connect } from 'react-redux';
-// import * as actionCreators from './store/actionCreators';
-// import axios from 'axios';
-// import { API_CODE, API_LIST, API_FAILED} from '../../common/js/api';
-import { Button, Input } from "antd";
-import { UserOutlined, LockOutlined, PhoneOutlined } from "@ant-design/icons";
-import "./login.scss";
+/* eslint-disable react/prop-types */
+import React, { Component } from 'react';
+import { Button, Input } from 'antd';
+import { UserOutlined, LockOutlined, PhoneOutlined } from '@ant-design/icons';
+import './login.scss';
 
 class Login extends Component {
-  render() {
+  constructor (props) {
+    super(props);
+  }
+  render () {
     return (
       <div className="P-login">
         <div className="login-box">
@@ -33,47 +33,13 @@ class Login extends Component {
             登陆
           </Button>
         </div>
-        {/* <Header 
-                    name='洛阳白牡丹'/>
-                <h1>Login page</h1>
-                <p>login: myData = {this.props.myData}</p>
-                <Button type="primary" onClick={()=> {this.props.setData('123456')}}>更改login的myData</Button>
-                <Button onClick={this.getData}>Ajax请求</Button>
-                <Button onClick={this.gotoHome.bind(this)}>跳转Home页</Button> */}
       </div>
     );
   }
 
-  gotoHome() {
-    this.props.history.push({ pathname: "/general/home" });
+  gotoHome () {
+    console.log(111)
+    this.props.history.push({ pathname: '/detail/management' });
   }
-
-  // getData() {
-  //     axios.get(API_LIST.GET_DATA).then((res) => {
-  //         let result = res.data
-  //         if(result.code === API_CODE.OK) {
-  //             alert('获取数据成功：' + result.data)
-  //         } else {
-  //             alert(result.message)
-  //         }
-  //     }).catch(() => {
-  //         alert(API_FAILED)
-  //     })
-  // }
 }
-
-// 把store中的数据映射到组件的props
-// const mapStateToProps = (state) => ({
-//     myData: state.getIn(['login', 'myData']),
-// })
-
-// // 把store的Dispatch映射到组件的props
-// const mapDispatchToProps = (dispatch) => ({
-//     setData(data) {
-//         const action = actionCreators.setData(data)
-//         dispatch(action)
-//     }
-// })
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Login)
 export default Login;

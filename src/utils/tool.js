@@ -1,18 +1,33 @@
 export default {
   fill (route, parent) {
-    if (!route.name) {
-      route.name = route.path.replace(/^\//, '');
+    route.title = route.meta.title;
+    route.key = route.path;
+
+    if (route.path.indexOf('/') !== 0) {
+      route.key = parent.path + '/' + route.path;
     }
-    if (parent) {
-      route.name = parent.name + '/' + route.path;
-      if (route.path.indexOf('/') !== 0) {
-        route.path = parent.path + '/' + route.path;
-      }
-    }
-    route['data-name'] = 'path_' + route.name;
     if (route.children) {
-      route.children = route.children.map((child) => this.fill(child, route));
+      route.subs = route.children.map((child) => this.fill(child, route));
     }
     return route;
-  }
+  },
+  unpackage (routes) {
+    return routes.reduce((_, route) => {
+      if (route.component) {
+        _ = _.concat({
+          icon: route.icon,
+          meta: route.meta,
+          component: route.component,
+          name: route.name,
+          path: route.path
+        });
+      }
+
+      if (route.children) {
+        _ = _.concat(this.unpackage(route.children));
+      }
+
+      return _;
+    }, []);
+  },
 }

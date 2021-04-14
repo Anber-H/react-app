@@ -1,16 +1,10 @@
+/* eslint-disable react/prop-types */
 import React from 'react'
 import { Route, Redirect, } from 'react-router-dom'
-import { isAuthenticated } from '../../utils/Session'
+// import { isAuthenticated } from '../../utils/Session'
 
 const PrivateRoute = ({component: Component, ...rest}) => (
-  <Route {...rest} render={(props) => (
-    !!isAuthenticated()
-      ? <Component {...props} />
-      : <Redirect to={{
-        pathname: '/login',
-        state: {from: props.location}
-      }}/>
-  )}/>
+  <Route {...rest} render={(props) => (<Component {...props} />)}/>
 )
 
 export default PrivateRoute
