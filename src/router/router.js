@@ -1,26 +1,12 @@
-import { Home, Detail, NotFound, Collecte } from '../pages/index';
+import detail from './detail';
+import collecte from './collecte';
+import home from './home';
 
-const routes = [{
-  key: 'home',
-  name: '首页',
-  path: '/home',
-  component: Home
-}, {
-  key: 'Collecte',
-  name: '收集',
-  path: '/Collecte',
-  component: Collecte
-}, {
-  key: 'Detail',
-  name: '详情',
-  path: '/Detail',
-  component: Detail
-}, {
-  key: '404',
-  name: '404',
-  path: '/404',
-  components: NotFound
-}];
-
-export default routes
+const routes = [
+  ...detail,
+  ...collecte,
+  ...home
+]
+console.log(routes, 999)
+export default {routes};
 

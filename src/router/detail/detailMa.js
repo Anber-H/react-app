@@ -11,7 +11,7 @@ const detail = {
       meta: {
         title: '详情管理',
       },
-      // component: (resolve) => require(['@/pages/Detail/index'], resolve)
+      component: (resolve) => require(['@/pages/Detail/index'], resolve)
     }
   ]
 }

@@ -9,6 +9,7 @@ export default {
     if (route.children) {
       route.subs = route.children.map((child) => this.fill(child, route));
     }
+    console.log(route, 888)
     return route;
   },
   unpackage (routes) {

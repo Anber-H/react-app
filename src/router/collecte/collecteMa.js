@@ -10,14 +10,14 @@ const detail = {
       meta: {
         title: '收集管理',
       },
-      // component: (resolve) => require(['@/pages/Collecte/index'], resolve)
+      component: (resolve) => require(['@/pages/Collecte/index'], resolve)
     },
     {
       path: 'card',
       meta: {
         title: '明信片',
       },
-      // component: (resolve) => require(['@/pages/Collecte/index'], resolve)
+      component: (resolve) => require(['@/pages/Collecte/index'], resolve)
     }
   ]
 }

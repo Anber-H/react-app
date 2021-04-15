@@ -12,7 +12,7 @@ class ContentMain extends React.Component {
     return (
       <div style={{padding: 16, position: 'relative'}}>
         <Switch>
-          <PrivateRoute exact path='/general/home' component={Home}/>
+          <PrivateRoute exact path='/home' component={Home}/>
           <PrivateRoute exact path='/detail/management' component={DeatilDemo}/>
           <PrivateRoute exact path='/collecte/management' component={CollecteDemo}/>
           <Redirect exact from='/' to='/login'/>
