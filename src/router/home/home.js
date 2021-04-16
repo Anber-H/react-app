@@ -1,10 +1,10 @@
-
+import LoadableComponent from '../../utils/LoadableComponent';
 const home = {
   path: '/home',
   meta: {
     title: '首页',
   },
   icon: 'login',
-  children: []
+  component: LoadableComponent(() => import('@/pages/Home'))
 }
 export default home;

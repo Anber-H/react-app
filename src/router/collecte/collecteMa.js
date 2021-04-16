@@ -1,3 +1,5 @@
+import LoadableComponent from '../../utils/LoadableComponent';
+
 const detail = {
   path: '/collecte',
   meta: {
@@ -10,14 +12,14 @@ const detail = {
       meta: {
         title: '收集管理',
       },
-      component: (resolve) => require(['@/pages/Collecte/index'], resolve)
+      component: LoadableComponent(() => import('@/pages/Collecte'))
     },
     {
       path: 'card',
       meta: {
         title: '明信片',
       },
-      component: (resolve) => require(['@/pages/Collecte/index'], resolve)
+      component: LoadableComponent(() => import('@/pages/Collecte'))
     }
   ]
 }
